@@ -85,14 +85,14 @@ cdef class pyiArduinoI2Ctds:
 
     def setPullI2C(self, flag=None):
         if flag is None:
-            return self.c_module.getPullI2C(True)
-        return self.c_module.getPullI2C(flag)
+            return self.c_module.setPullI2C(True)
+        return self.c_module.setPullI2C(flag)
 
     def getFrequency(self):
         return self.c_module.getFrequency()
 
     def setFrequency(self, freq):
-        return self.c_module.getFrequency(freq)
+        return self.c_module.setFrequency(freq)
 
     def setCalibration(self, num, tds):
         return self.c_module.setCalibration(num, tds)
