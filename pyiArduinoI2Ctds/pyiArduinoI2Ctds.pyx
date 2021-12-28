@@ -16,17 +16,27 @@ REG_MODEL            =  0x04
 REG_VERSION          =  0x05
 REG_ADDRESS          =  0x06
 REG_CHIP_ID          =  0x07
-REG_SHT_PERIOD       =  0x08
-REG_SHT_FLG          =  0x10
-REG_SHT_TEM_L        =  0x11
-REG_SHT_HUM_L        =  0x13
-REG_SHT_TEM_CHANGE   =  0x15
-REG_SHT_HUM_CHANGE   =  0x16
+REG_TDS_FREQUENCY_L  =  0x08
+REG_TDS_FREQUENCY_H  =  0x09
+REG_TDS_KNOWN_TDS    =  0x0A
+REG_TDS_KNOWN_TDS_1  =  0x0C
+REG_TDS_KNOWN_TDS_2  =  0x0E
+REG_TDS_CALIBRATION  =  0x10
+REG_TDS_Ka           =  0x11
+REG_TDS_Kb           =  0x14
+REG_TDS_Kt           =  0x16
+REG_TDS_Kp           =  0x18
+REG_TDS_t            =  0x19
+REG_TDS_T            =  0x1A
+REG_TDS_Ro           =  0x1B
+REG_TDS_Vout         =  0x1E
+REG_TDS_S            =  0x20
+REG_TDS_EC           =  0x22
+REG_TDS_TDS          =  0x24
+
 # Позиция битов и флагов:
-SHT_TEM_NEGATIVE     =  0x80
-SHT_FLG_CHANGED_HUM  =  0x04
-SHT_FLG_CHANGED_TEM  =  0x02
-SHT_FLG_CHANGED      =  0x01
+TDS_BIT_CALC_2       =  0x02
+TDS_BIT_CALC_1       =  0x01
 
 NO_BEGIN = 1
 
@@ -103,17 +113,17 @@ cdef class pyiArduinoI2Ctds:
     def setKnownTDS(self, num, tds):
         return self.c_module.setKnownTDS(num, tds)
 
-    def getRd(self):
-        return self.c_module.getRd()
+    def getKa(self):
+        return self.c_module.getKa()
 
-    def setRd(self, val):
-        return self.c_module.setRd(val)
+    def setKa(self, val):
+        return self.c_module.setKa(val)
 
-    def getKd(self):
-        return self.c_module.getKd()
+    def getKb(self):
+        return self.c_module.getKb()
 
-    def setKd(self, val):
-        return self.c_module.setKd(val)
+    def setKb(self, val):
+        return self.c_module.setKb(val)
 
     def getKt(self):
         return self.c_module.getKt()
@@ -147,3 +157,6 @@ cdef class pyiArduinoI2Ctds:
 
     def getTDS(self):
         return self.c_module.getTDS()
+
+    def getVout(self):
+        return self.c_module.getVout()

@@ -2,9 +2,9 @@
 
 # pyiArduinoI2Ctds
 
-**Данная библилотека (модуль для Python3) позволяет управлять электронными модулями (устройствами) []() от iArduino.ru по шине I2C на Raspberry Pi.**
+**Данная библилотека (модуль для Python3) позволяет управлять электронными модулями (устройствами) [Солемер для воды с щупом TDS и EC-метр , FLASH-I2C](https://iarduino.ru/shop/Sensory-Datchiki/solemer-tds-ec-flash-i2c.html) от iArduino.ru по шине I2C на Raspberry Pi.**
 
-Подробнее про датчик читайте в нашей [Wiki]()
+Подробнее про датчик читайте в нашей [Wiki](https://wiki.iarduino.ru/page/TDS-EC-i2c-raspberry/)
 
 ## Установка ##
 
@@ -25,8 +25,8 @@
 `make all` или `make`
 Для сборки конкретного примера: `make "название примера"`
 Например:
-`make reset`
+`make getData`
 Для удаления собранных исполняемых файлов:
 `make clean`
 
-**This is a Python3 module for Raspberry Pi. It can work with []() by iarduino.ru**
+**This is a Python3 module for Raspberry Pi. It requieres hardware module <https://iarduino.ru/shop/Sensory-Datchiki/solemer-tds-ec-flash-i2c.html> by iarduino.ru**
