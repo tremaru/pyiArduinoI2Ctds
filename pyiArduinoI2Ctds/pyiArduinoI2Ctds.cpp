@@ -1117,6 +1117,9 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_uint16_t(uint16_t value);
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_uint32_t(uint32_t value);
 
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_uint8_t(uint8_t value);
+
 /* CIntFromPy.proto */
 static CYTHON_INLINE unsigned char __Pyx_PyInt_As_unsigned_char(PyObject *);
 
@@ -1297,8 +1300,9 @@ static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ct
 static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_52getEC(struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_54getTDS(struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_56getVout(struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_58__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_60__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_58getCalibration(struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_60__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_62__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_tp_new_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
@@ -3430,6 +3434,7 @@ static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ct
  * 
  *     def getVout(self):             # <<<<<<<<<<<<<<
  *         return self.c_module.getVout()
+ * 
  */
 
 /* Python wrapper */
@@ -3455,6 +3460,8 @@ static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ct
  * 
  *     def getVout(self):
  *         return self.c_module.getVout()             # <<<<<<<<<<<<<<
+ * 
+ *     def getCalibration(self):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->c_module.getVout()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
@@ -3468,12 +3475,69 @@ static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ct
  * 
  *     def getVout(self):             # <<<<<<<<<<<<<<
  *         return self.c_module.getVout()
+ * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("pyiArduinoI2Ctds.pyiArduinoI2Ctds.pyiArduinoI2Ctds.getVout", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyiArduinoI2Ctds/pyiArduinoI2Ctds.pyx":164
+ *         return self.c_module.getVout()
+ * 
+ *     def getCalibration(self):             # <<<<<<<<<<<<<<
+ *         return self.c_module.getCalibration()
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_59getCalibration(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_59getCalibration(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("getCalibration (wrapper)", 0);
+  __pyx_r = __pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_58getCalibration(((struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_58getCalibration(struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("getCalibration", 0);
+
+  /* "pyiArduinoI2Ctds/pyiArduinoI2Ctds.pyx":165
+ * 
+ *     def getCalibration(self):
+ *         return self.c_module.getCalibration()             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_uint8_t(__pyx_v_self->c_module.getCalibration()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "pyiArduinoI2Ctds/pyiArduinoI2Ctds.pyx":164
+ *         return self.c_module.getVout()
+ * 
+ *     def getCalibration(self):             # <<<<<<<<<<<<<<
+ *         return self.c_module.getCalibration()
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyiArduinoI2Ctds.pyiArduinoI2Ctds.pyiArduinoI2Ctds.getCalibration", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3488,19 +3552,19 @@ static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ct
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_59__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_59__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_61__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_61__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_58__reduce_cython__(((struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_60__reduce_cython__(((struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_58__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self) {
+static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_60__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3542,19 +3606,19 @@ static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ct
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_61__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_61__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_63__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_63__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_60__setstate_cython__(((struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_62__setstate_cython__(((struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_60__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_62__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduinoI2Ctds *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3646,8 +3710,9 @@ static PyMethodDef __pyx_methods_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_pyiArduin
   {"getEC", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_53getEC, METH_NOARGS, 0},
   {"getTDS", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_55getTDS, METH_NOARGS, 0},
   {"getVout", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_57getVout, METH_NOARGS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_59__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_61__setstate_cython__, METH_O, 0},
+  {"getCalibration", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_59getCalibration, METH_NOARGS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_61__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_16pyiArduinoI2Ctds_63__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -5343,6 +5408,37 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_uint32_t(uint32_t value) {
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
         return _PyLong_FromByteArray(bytes, sizeof(uint32_t),
+                                     little, !is_unsigned);
+    }
+}
+
+/* CIntToPy */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_uint8_t(uint8_t value) {
+    const uint8_t neg_one = (uint8_t) ((uint8_t) 0 - (uint8_t) 1), const_zero = (uint8_t) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(uint8_t) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(uint8_t) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(uint8_t) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(uint8_t) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(uint8_t) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(uint8_t),
                                      little, !is_unsigned);
     }
 }

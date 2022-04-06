@@ -45,3 +45,4 @@ cdef extern from "iarduino_I2C_TDS.h":
         uint16_t get_S()
         uint16_t getEC()
         uint16_t getTDS()
+        uint8_t getCalibration()

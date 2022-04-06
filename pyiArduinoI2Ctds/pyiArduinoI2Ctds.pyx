@@ -160,3 +160,6 @@ cdef class pyiArduinoI2Ctds:
 
     def getVout(self):
         return self.c_module.getVout()
+
+    def getCalibration(self):
+        return self.c_module.getCalibration()
